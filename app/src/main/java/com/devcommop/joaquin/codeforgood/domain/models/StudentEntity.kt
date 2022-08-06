@@ -1,7 +1,12 @@
 package com.devcommop.joaquin.codeforgood.domain.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class StudentEntity(
 
+    @PrimaryKey val id: Long? = null,
     var name: String = "some error occurred",
     var classid: Long = -1,
     var rank: Long = -1,
