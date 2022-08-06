@@ -3,6 +3,7 @@ package com.devcommop.joaquin.codeforgood.common.listener
 interface OnClickStudent {
     fun onClick()
 }
+
 interface OnClickClass{
     fun onClick()
 }
@@ -17,5 +18,4 @@ interface OnClickStudentAddRemove {
     fun onClickAdd()
     fun onClickSubtract()
     fun onClickRemove()
-
 }
