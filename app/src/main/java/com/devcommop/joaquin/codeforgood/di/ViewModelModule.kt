@@ -3,6 +3,8 @@ package com.devcommop.joaquin.codeforgood.di
 import com.devcommop.joaquin.codeforgood.ui.MainViewModel
 import com.devcommop.joaquin.codeforgood.ui.announcements_screen.AnnouncementsViewModel
 import com.devcommop.joaquin.codeforgood.ui.attendance_screen.AttendanceViewModel
+import com.devcommop.joaquin.codeforgood.ui.classes_screen.ClassesViewModel
+import com.devcommop.joaquin.codeforgood.ui.classes_screen.class_detail_screen.ClassDetailViewModel
 import com.devcommop.joaquin.codeforgood.ui.donation_screen.DonationsViewModel
 import com.devcommop.joaquin.codeforgood.ui.home_screen.HomeViewModel
 import com.devcommop.joaquin.codeforgood.ui.login_screen.LoginViewModel
@@ -27,5 +29,7 @@ val viewModelModule = module {
     viewModel { SignUpViewModel(get()) }
     viewModel { StudentsViewModel(get()) }
     viewModel { StudentDetailViewModel(get()) }
+    viewModel { ClassesViewModel(get()) }
+    viewModel { ClassDetailViewModel(get()) }
 
 }
