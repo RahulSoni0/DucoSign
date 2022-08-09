@@ -1,14 +1,17 @@
 package com.devcommop.joaquin.codeforgood.data.db
 
 import com.devcommop.joaquin.codeforgood.common.Constants
+import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.ClassesListResponse
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.SponsorsResponse
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.StudentsResponse
 import com.devcommop.joaquin.codeforgood.domain.db.OnlineDatabase
+import com.devcommop.joaquin.codeforgood.domain.models.ClassEntity
 import com.devcommop.joaquin.codeforgood.domain.models.SponsorEntity
 import com.devcommop.joaquin.codeforgood.domain.models.StudentEntity
 import com.devcommop.joaquin.codeforgood.domain.util.SponsorOrder
 import com.devcommop.joaquin.codeforgood.domain.util.StudentOrder
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 
@@ -43,6 +46,21 @@ class FirestoreDb(): OnlineDatabase {
         } catch (exception: Exception) {
             response.exception = exception
         }
+        emit(response)
+    }
+
+    override fun getClasses() = flow {
+        val response = ClassesListResponse()
+        try{
+            val list = mutableListOf<ClassEntity>()
+            firestore.collection(Constants.CLASSES_COLLECTION).get().await().forEach { snapshot ->
+                list.add(snapshot.toObject(ClassEntity::class.java))
+            }
+            response.list = list
+        } catch (exception: Exception) {
+            response.exception = exception
+        }
+
         emit(response)
     }
 
