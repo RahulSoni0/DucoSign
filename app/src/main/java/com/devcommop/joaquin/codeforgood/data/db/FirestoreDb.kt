@@ -85,6 +85,6 @@ class FirestoreDb(): OnlineDatabase {
         emit(response)
     }
 
-
+    
 
 }
