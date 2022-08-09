@@ -1,6 +1,7 @@
 package com.devcommop.joaquin.codeforgood.domain.db
 
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.ClassesListResponse
+import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.SingleClassResponse
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.SponsorsResponse
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.StudentsResponse
 import com.devcommop.joaquin.codeforgood.domain.models.SponsorEntity
@@ -19,5 +20,7 @@ interface OnlineDatabase {
     //fun getMentorsList(mentorOrder: MentorOrder): Flow<List<MentorEntity>>
 
     fun getClasses(): Flow<ClassesListResponse>
+
+    fun getClassById(classId: String): Flow<SingleClassResponse>
 
 }
