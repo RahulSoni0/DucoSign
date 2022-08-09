@@ -17,3 +17,5 @@ data class StudentEntity(
     var complaints: List<String> = emptyList()
 
 )
+
+class InvalidStudentException(message: String): Exception()

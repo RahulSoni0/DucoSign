@@ -1,22 +1,22 @@
 package com.devcommop.joaquin.codeforgood.domain.util
 
-sealed class MentorOrder(val orderType: OrderType){
+sealed class MentorOrder(val typeOfOrder: TypeOfOrder){
 
-    class DateStart(orderType: OrderType): MentorOrder(orderType = orderType)
-    class Rating(orderType: OrderType): MentorOrder(orderType = orderType)
-    class Class(orderType: OrderType): MentorOrder(orderType = orderType)
-    class City(orderType: OrderType): MentorOrder(orderType = orderType)
-    class Subject(orderType: OrderType): MentorOrder(orderType = orderType)
-    class Complaints(orderType: OrderType): MentorOrder(orderType = orderType)
+    class DateStart(orderType: TypeOfOrder): MentorOrder(typeOfOrder = orderType)
+    class Rating(orderType: TypeOfOrder): MentorOrder(typeOfOrder = orderType)
+    class Class(orderType: TypeOfOrder): MentorOrder(typeOfOrder = orderType)
+    class City(orderType: TypeOfOrder): MentorOrder(typeOfOrder = orderType)
+    class Subject(orderType: TypeOfOrder): MentorOrder(typeOfOrder = orderType)
+    class Complaints(orderType: TypeOfOrder): MentorOrder(typeOfOrder = orderType)
 
-    fun copy(orderType: OrderType): MentorOrder{
+    fun copy(typeOfOrder: TypeOfOrder): MentorOrder{
         return when(this){
-            is MentorOrder.DateStart -> MentorOrder.DateStart(orderType)
-            is MentorOrder.Rating -> MentorOrder.Rating(orderType)
-            is MentorOrder.Class -> MentorOrder.Class(orderType)
-            is MentorOrder.City -> MentorOrder.City(orderType)
-            is MentorOrder.Subject -> MentorOrder.Subject(orderType)
-            is MentorOrder.Complaints -> MentorOrder.Complaints(orderType)
+            is MentorOrder.DateStart -> MentorOrder.DateStart(typeOfOrder)
+            is MentorOrder.Rating -> MentorOrder.Rating(typeOfOrder)
+            is MentorOrder.Class -> MentorOrder.Class(typeOfOrder)
+            is MentorOrder.City -> MentorOrder.City(typeOfOrder)
+            is MentorOrder.Subject -> MentorOrder.Subject(typeOfOrder)
+            is MentorOrder.Complaints -> MentorOrder.Complaints(typeOfOrder)
         }
     }
 

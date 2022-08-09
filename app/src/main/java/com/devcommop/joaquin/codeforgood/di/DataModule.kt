@@ -11,9 +11,10 @@ import org.koin.dsl.module
 
 val dataModule = module {
 
-    single<Repository> { RepositoryImpl() }//when someone asks for Repo just give him RepoImpl
+    single<Repository> { RepositoryImpl(get()) }//when someone asks for Repo just give him RepoImpl
     single<OnlineDatabase> { FirestoreDb() }
-    single<CachingDatabase> { RoomDb() }
+    //single<CachingDatabase> { RoomDb() } --> Cannot inject abstract class beacuse its instance cannot be created. Rather we should be using getInstance() builder pattern
+    single<CachingDatabase> { RoomDb.getInstance() }
     single{ FirebaseAuth.getInstance() }
 
 }

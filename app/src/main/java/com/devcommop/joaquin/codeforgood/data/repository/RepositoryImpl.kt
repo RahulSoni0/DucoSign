@@ -1,13 +1,21 @@
 package com.devcommop.joaquin.codeforgood.data.repository
 
+import com.devcommop.joaquin.codeforgood.domain.db.OnlineDatabase
+import com.devcommop.joaquin.codeforgood.domain.models.SponsorEntity
 import com.devcommop.joaquin.codeforgood.domain.models.StudentEntity
 import com.devcommop.joaquin.codeforgood.domain.repository.Repository
+import com.devcommop.joaquin.codeforgood.domain.util.SponsorOrder
 import com.devcommop.joaquin.codeforgood.domain.util.StudentOrder
 import kotlinx.coroutines.flow.Flow
 
-class RepositoryImpl : Repository {
+/**
+ * Always remember: Repo never takes DataSrc parameter. Only RepoImpl will take DataSrc in parameter and that too through abstraction with all respects to Clean Architecture principles
+ */
+class RepositoryImpl(
+    private val firestore: OnlineDatabase
+) : Repository {
 
-    override fun getStudents(studentOrder: StudentOrder): Flow<List<StudentEntity>> {
-        TODO("Not yet implemented")
-    }
+    override fun getStudentsList(studentOrder: StudentOrder)= firestore.getStudentsList(studentOrder)
+
+    override fun getSponsorsList(sponsorOrder: SponsorOrder) = firestore.getSponsorsList(sponsorOrder)
 }
