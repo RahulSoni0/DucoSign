@@ -6,20 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home_screen.HomeFragment">
 
-    <nl.joery.animatedbottombar.AnimatedBottomBar
-        android:id="@+id/bottom_bar"
-        android:background="#FFF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:abb_selectedTabType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:abb_indicatorAppearance="round"
-        app:abb_indicatorMargin="16dp"
-        app:abb_indicatorHeight="4dp"
-        app:abb_tabs="@menu/menu"
-        app:abb_selectedIndex="1" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
