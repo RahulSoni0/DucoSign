@@ -23,7 +23,7 @@
     </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/shapeableImageView"
+        android:id="@+id/ImageView_sponsorimg"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_marginTop="7dp"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/materialTextView"></com.google.android.material.imageview.ShapeableImageView>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView2"
+        android:id="@+id/Tv_SponsorName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -43,10 +43,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shapeableImageView"></com.google.android.material.textview.MaterialTextView>
+        app:layout_constraintTop_toBottomOf="@+id/ImageView_sponsorimg"></com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView3"
+        android:id="@+id/Tv_SpnosorContact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -55,10 +55,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView2"></com.google.android.material.textview.MaterialTextView>
+        app:layout_constraintTop_toBottomOf="@+id/Tv_SponsorName"></com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView4"
+        android:id="@+id/Tv_SponsorMaiId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -67,19 +67,20 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView3">
+        app:layout_constraintTop_toBottomOf="@+id/Tv_SpnosorContact">
     </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/Tv_Amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="Total amount Funded : ₹ "
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/materialTextView4"
-        tools:layout_editor_absoluteX="8dp">
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tv_SponsorMaiId">
     </com.google.android.material.textview.MaterialTextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
