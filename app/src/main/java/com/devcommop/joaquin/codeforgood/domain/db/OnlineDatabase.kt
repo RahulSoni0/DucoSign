@@ -1,26 +1,22 @@
 package com.devcommop.joaquin.codeforgood.domain.db
 
-import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.ClassesListResponse
-import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.SingleClassResponse
-import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.SponsorsResponse
-import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.StudentsResponse
-import com.devcommop.joaquin.codeforgood.domain.models.SponsorEntity
-import com.devcommop.joaquin.codeforgood.domain.models.StudentEntity
-import com.devcommop.joaquin.codeforgood.domain.util.MentorOrder
+import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.*
 import com.devcommop.joaquin.codeforgood.domain.util.SponsorOrder
 import com.devcommop.joaquin.codeforgood.domain.util.StudentOrder
 import kotlinx.coroutines.flow.Flow
 
 interface OnlineDatabase {
 
-    fun getSponsorsList(sponsorOrder: SponsorOrder): Flow<SponsorsResponse>
+    fun getSponsorsList(sponsorOrder: SponsorOrder): Flow<SponsorsListResponse>
 
-    fun getStudentsList(studentOrder: StudentOrder): Flow<StudentsResponse>
+    fun getStudentsList(classId: String, studentOrder: StudentOrder): Flow<StudentsListResponse>
 
     //fun getMentorsList(mentorOrder: MentorOrder): Flow<List<MentorEntity>>
 
     fun getClasses(): Flow<ClassesListResponse>
 
     fun getClassById(classId: String): Flow<SingleClassResponse>
+
+    fun getStudentById(studentId: String): Flow<SingleStudentResponse>
 
 }

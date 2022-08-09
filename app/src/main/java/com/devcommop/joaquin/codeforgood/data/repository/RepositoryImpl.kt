@@ -1,6 +1,7 @@
 package com.devcommop.joaquin.codeforgood.data.repository
 
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.ClassesListResponse
+import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.SingleStudentResponse
 import com.devcommop.joaquin.codeforgood.domain.db.OnlineDatabase
 import com.devcommop.joaquin.codeforgood.domain.models.SponsorEntity
 import com.devcommop.joaquin.codeforgood.domain.models.StudentEntity
@@ -16,7 +17,7 @@ class RepositoryImpl(
     private val firestore: OnlineDatabase
 ) : Repository {
 
-    override fun getStudentsList(studentOrder: StudentOrder)= firestore.getStudentsList(studentOrder)
+    override fun getStudentsList(classId: String, studentOrder: StudentOrder)= firestore.getStudentsList(classId, studentOrder)
 
     override fun getSponsorsList(sponsorOrder: SponsorOrder) = firestore.getSponsorsList(sponsorOrder)
 
@@ -24,4 +25,5 @@ class RepositoryImpl(
 
     override fun getClassById(uid: String)= firestore.getClassById(uid)
 
+    override fun getStudentById(studentId: String)= firestore.getStudentById(studentId)
 }
