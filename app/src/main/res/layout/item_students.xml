@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/_80sdp"
+    android:layout_marginEnd="@dimen/_16sdp"
+    android:layout_marginVertical="@dimen/_8sdp"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/_8sdp"
+    app:layout_constraintCircleRadius="@dimen/_8sdp">
+
+
+    <ImageView
+        android:id="@+id/iv_SponsorImg"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_16sdp"
+        tools:src="@drawable/common_google_signin_btn_icon_dark" />
+    <TextView
+        android:id="@+id/tv_studentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:textAlignment="center"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        tools:text="test Students name" />
+
+</LinearLayout>
