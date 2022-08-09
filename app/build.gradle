@@ -77,4 +77,8 @@ dependencies {
     //bottom nav library
     implementation 'nl.joery.animatedbottombar:library:1.1.0'
 
+    //scalable dp library
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
 }
