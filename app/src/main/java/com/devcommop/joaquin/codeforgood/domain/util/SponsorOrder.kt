@@ -7,6 +7,7 @@ sealed class SponsorOrder(val typeOfOrder: TypeOfOrder){
     class Occupation(orderType: TypeOfOrder): SponsorOrder(typeOfOrder = orderType)
     class City(orderType: TypeOfOrder): SponsorOrder(typeOfOrder = orderType)
     class Company(orderType: TypeOfOrder): SponsorOrder(typeOfOrder = orderType)
+    class Importance(orderType: TypeOfOrder): SponsorOrder(typeOfOrder = orderType)
 
     fun copy(typeOfOrder: TypeOfOrder): SponsorOrder{
         return when(this){
@@ -15,6 +16,7 @@ sealed class SponsorOrder(val typeOfOrder: TypeOfOrder){
             is SponsorOrder.Occupation -> SponsorOrder.Occupation(typeOfOrder)
             is SponsorOrder.City -> SponsorOrder.City(typeOfOrder)
             is SponsorOrder.Company -> SponsorOrder.Company(typeOfOrder)
+            is SponsorOrder.Importance -> SponsorOrder.Importance(typeOfOrder)
         }
     }
 

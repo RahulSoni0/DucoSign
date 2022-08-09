@@ -1,5 +1,6 @@
 package com.devcommop.joaquin.codeforgood.data.repository
 
+import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.ClassesListResponse
 import com.devcommop.joaquin.codeforgood.domain.db.OnlineDatabase
 import com.devcommop.joaquin.codeforgood.domain.models.SponsorEntity
 import com.devcommop.joaquin.codeforgood.domain.models.StudentEntity
@@ -18,4 +19,9 @@ class RepositoryImpl(
     override fun getStudentsList(studentOrder: StudentOrder)= firestore.getStudentsList(studentOrder)
 
     override fun getSponsorsList(sponsorOrder: SponsorOrder) = firestore.getSponsorsList(sponsorOrder)
+
+    override fun getClasses(): Flow<ClassesListResponse> {
+        TODO("Not yet implemented")
+    }
+
 }

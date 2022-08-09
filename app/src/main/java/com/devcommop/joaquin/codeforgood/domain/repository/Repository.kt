@@ -1,5 +1,6 @@
 package com.devcommop.joaquin.codeforgood.domain.repository
 
+import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.ClassesListResponse
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.SponsorsResponse
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.StudentsResponse
 import com.devcommop.joaquin.codeforgood.domain.models.SponsorEntity
@@ -18,6 +19,6 @@ interface Repository {
 
     fun getSponsorsList(sponsorOrder: SponsorOrder): Flow<SponsorsResponse>
 
-
+    fun getClasses(): Flow<ClassesListResponse>
 
 }
