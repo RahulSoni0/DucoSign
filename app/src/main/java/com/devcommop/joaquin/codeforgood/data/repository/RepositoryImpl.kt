@@ -20,8 +20,8 @@ class RepositoryImpl(
 
     override fun getSponsorsList(sponsorOrder: SponsorOrder) = firestore.getSponsorsList(sponsorOrder)
 
-    override fun getClasses(): Flow<ClassesListResponse> {
-        TODO("Not yet implemented")
-    }
+    override fun getClasses()= firestore.getClasses()
+
+    override fun getClassById(uid: String)= firestore.getClassById(uid)
 
 }

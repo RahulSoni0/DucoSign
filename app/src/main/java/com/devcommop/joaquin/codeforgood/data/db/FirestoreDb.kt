@@ -2,6 +2,7 @@ package com.devcommop.joaquin.codeforgood.data.db
 
 import com.devcommop.joaquin.codeforgood.common.Constants
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.ClassesListResponse
+import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.SingleClassResponse
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.SponsorsResponse
 import com.devcommop.joaquin.codeforgood.data.db.db_repsonses.StudentsResponse
 import com.devcommop.joaquin.codeforgood.domain.db.OnlineDatabase
@@ -11,6 +12,7 @@ import com.devcommop.joaquin.codeforgood.domain.models.StudentEntity
 import com.devcommop.joaquin.codeforgood.domain.util.SponsorOrder
 import com.devcommop.joaquin.codeforgood.domain.util.StudentOrder
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.toObject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
@@ -60,7 +62,18 @@ class FirestoreDb(): OnlineDatabase {
         } catch (exception: Exception) {
             response.exception = exception
         }
+        emit(response)
+    }
 
+    override fun getClassById(uid: String) = flow {
+        val response = SingleClassResponse()
+        try{
+            response.entity = firestore.collection(Constants.CLASSES_COLLECTION).whereEqualTo("uid", uid).get().await().map{
+                it.toObject(ClassEntity::class.java)
+            }[0]//get the first object of the list as the list would contain only one character
+        } catch (exception: Exception) {
+            response.exception = exception
+        }
         emit(response)
     }
 
